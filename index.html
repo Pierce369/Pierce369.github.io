@@ -1,286 +1,384 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Pierce Bak=er">
-        <title>Pierce Baker IR</title>
+<!DOCTYPE html>
 
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/product/">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-
-
-    <style>
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pierce Baker | INTERACTIVE RESUME</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#958da1",
+                        "on-secondary": "#003824",
+                        "surface-container-highest": "#273647",
+                        "on-tertiary-fixed": "#3d0026",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed": "#ffd8e7",
+                        "on-tertiary-container": "#ffdce9",
+                        "surface-container-high": "#1c2b3c",
+                        "on-primary-fixed": "#25005a",
+                        "outline-variant": "#4a4455",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "tertiary": "#ffafd3",
+                        "on-surface": "#d4e4fa",
+                        "on-background": "#d4e4fa",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-lowest": "#010f1f",
+                        "surface": "#051424",
+                        "surface-tint": "#d2bbff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "inverse-surface": "#d4e4fa",
+                        "surface-container": "#122131",
+                        "surface-variant": "#273647",
+                        "inverse-on-surface": "#233143",
+                        "on-secondary-fixed": "#002113",
+                        "error-container": "#93000a",
+                        "background": "#051424",
+                        "surface-container-low": "#0d1c2d",
+                        "on-primary": "#3f008e",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-dim": "#051424",
+                        "surface-bright": "#2c3a4c",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-container": "#00a572",
+                        "primary-container": "#7c3aed",
+                        "on-secondary-container": "#00311f",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#4edea3",
+                        "primary": "#d2bbff",
+                        "on-tertiary": "#620040",
+                        "on-error": "#690005",
+                        "inverse-primary": "#732ee4",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "on-primary-container": "#ede0ff",
+                        "tertiary-container": "#ae397b",
+                        "on-surface-variant": "#ccc3d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-mono": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                }
             }
         }
-
-        .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    </script>
+<style>
+        body { background-color: #051424; color: #d4e4fa; }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+            border-color: rgba(124, 58, 237, 0.4);
         }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
+        .glow-text {
+            text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
         }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .fill-img {
-            background-image: url(img/background.jpg);
-            background-size: cover;
-        }
+        html { scroll-behavior: smooth; }
     </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
 
-
-
-    
-    <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
-    </head>
-    <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
-
-
-
-    <main>
-        <div class="position-relative overflow-hidden text-center bg-light min-vh-100 fill-img d-flex align-items-center">
-            <div class="col-md-5 p-lg-5 mx-auto my-5">
-                <h1 class="display-4 fw-normal text-light fw-bolder">Pierce Baker</h1>
-                <p class="lead fw-normal fs-4 text-light fw-bold">Interactive Resume</p>
-            </div>
-        </div>
-
-        <!-- Profile -->
-        <div class="max-vw-100 p-3 d-flex flex-equal w-100 my-md-3 ps-md-3 align-items-center">
-            <div class="text-center overflow-hidden w-100 border-bottom border-dark">
-                <h1 lass="display-4 fw-normal">Profile </h1>
-                <p class="lead fw-normal fs-5">Computer Science and Software Developer</p>
-            </div>            
-        </div>
-        <div class="max-vw-100 p-3 d-lg-flex flex-lg-equal w-100 my-md-3 align-items-center containter">
-            <div class="text-center overflow-hidden col-lg-6">
-                <h2 lass="display-4 fw-normal">About me</h2>
-                <p class="lead fw-normal pt-0 p-5 ">I am a recent graduate who studied computer science. I have worked in web development, but also have a passion for 
-                    software development. I am passionate about learning new things, and am always eager to try something new.
-                    I have proved my leadership skills through a leadership program in Taekwon do, the two day Amped leadership course through Lakehead University, as well as through my responsibilities as a manager during my time at College Pro.
-                    I grew up in Alberta, spent some time in Ontario where I went to school, and recently moved back to Alberta. I am a strong organized independent worker who also loves coordinating in a strong team envirnment.
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-background via-surface-container-low to-background"></div>
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary-container/5 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+<h1 class="font-display-xl text-display-xl text-white mb-4 tracking-tighter uppercase">
+                    Pierce Baker
+                </h1>
+<p class="font-label-mono text-label-mono text-secondary tracking-[0.3em] uppercase mb-12">
+                    INTERACTIVE RESUME
                 </p>
-            </div>
-            <div class="overflow-hidden col-lg-6">
-                <div class="row max-vw-100 p-3 w-100 my-md-3 align-items-center containter text-center">
-                    <div class="text-center overflow-hidden col-xl-6 col-lg-6 col-8 ms-xl-5 p-xl-0 align-items-center mx-auto">
-                        <img class="h-100 w-100 img-fluid rounded-circle shadow-5-strong border border-5" src="img/face.jpg" width="500" height="600">
-                    </div>  
-                    <div class="mx-auto overflow-hidden col-xl-4 d-flex align-items-center p-5">
-                        <div class="mx-auto text-start overflow-hidden">
-                            <h2 lass="display-4 fw-normal">Details</h2>
-                            <p class="lead lh-1 fw-bold">Name:</p>
-                            <p class="lead lh-1 fw-normal">Pierce Baker</p>
-                            <p class="lead lh-1 fw-bold">Location:</p>
-                            <p class="lead lh-1 fw-normal">Fort Saskatchewan, AB, Canada</p>
-                        </div>               
-                    </div> 
-                </div>
-            </div>     
-        </div>
-
-        <!-- Experience -->
-        <div class="max-vw-100 p-3 d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 align-items-center">
-            <div class="text-center overflow-hidden w-100 border-bottom border-dark">
-                <h1 lass="display-4 fw-normal">Experience</h1>
-                <p> </p>
-            </div>            
-        </div>
-        <div class="max-vw-100 p-3 d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 align-items-center container">
-            <div class="col-12">
-                <h2 lass="display-4 fw-normal"><u>Education</u></h2>
-                <div class="row"><p></p></div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">University of Guelph</p>
-                        <p class="lead fw-normal fs-6">2020-2023</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Bachelor of Computer Science</p>
-                        <p class="lead fw-normal fs-6">I have grown a lot throughout my time at Guelph, and have been pushed to further my knowledge and understanding.
-                            I completed several project courses where I worked as part of a team to develop large scale projects. 
-                            <br>One of these we worked with a community partner The Grove (a youth wellness non-profit) to design a new online platform.
-                            Throughout the semester, we ran meetings with the partner to gather information, confirm our understanding and approach to their problem, 
-                            and had multiple prototyping sessions. We created an app for The Grove to help communicate information, promote attendance at the physical 
-                            locations, and allow the youth to sign up for workshops.
-                            <br>The other course we designed and developed a course search website from the ground up. 
-                            We had a scraper to get data from multiple school websites, a server to search the data in multiple ways, 
-                            a database to store the info, and a front end web page to display the searchs. During this project I lead a sprint, which included
-                            spliiting up work, managing team members, leading meetings, and presenting our completed work.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Lakehead University</p>
-                        <p class="lead fw-normal fs-6">2016-2019</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Bachelor of Computer Science (Partial)</p>
-                        <p class="lead fw-normal fs-6">I completed two and a half years at Lakehead before deciding to transfer to a school closer to home. Going to a smaller
-                            school allowed to me to gain more one-on-one time with instructors and develop my understaning of concepts to a deeper level.
-                        </p>
-                    </div>
-                </div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">GCVI</p>
-                        <p class="lead fw-normal fs-6">2012-2015</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">High School</p>
-                    </div>
-                </div>                
-
-            </div>
-            
-        </div>
-        <div class="max-vw-100 p-3 d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 align-items-center container">
-            <div class="col-12">
-                <h2 lass="display-4 fw-normal"><u>Career</u></h2>
-                <div class="row"><p></p></div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Sales Operations Coordinator	</p>
-                        <p class="lead fw-normal fs-6">2024-Present</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Acosta Canada</p>
-                        <p class="lead fw-normal fs-6">As a Sales Operations Coordinator, I managed the accuracy and flow of product and promotional data to support seamless retailer execution. I collaborated cross-functionally with teams across sales, marketing, product management, and IT to ensure timely delivery of content in multiple formats, resolved data discrepancies, and maintained operational integrity. I was passionate about process optimization, regularly identifying opportunities to streamline tasks through automation and improve reporting efficiency. With a detail-oriented mindset and strong communication skills, I supported both day-to-day operations and strategic projects that enhanced the overall sales process.</p>
-                    </div>
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Client Services Coordinator	</p>
-                        <p class="lead fw-normal fs-6">2023-2024</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Acosta Canada</p>
-                        <p class="lead fw-normal fs-6">My main priority in this position was to support our country wide team of over 50 technicians with administrative tasks such as taking payments, ordering parts, and processing jobs. However, I was also responsible for answering phone lines, assisting customers with scheduling, and selling extended warranty. Due to my strong performance and high attention to detail, I was trained on several more advanced administration projects throughout my time here.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Full Stack Web Developer</p>
-                        <p class="lead fw-normal fs-6">2022-2022</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Modzee Software</p>
-                        <p class="lead fw-normal fs-6">During my summer employment at Modzee I worked both individually and as part of a team to design, develop, and improve modules for the employee management platform. I also enjoyed being able to learn several new frameworks and libraries in this position including Vue.js and laravel.
-                            <br>Key Contributions:
-                            <br>-Created a “FAQ/Contact us” page
-                            <br>-Creates a polls module to allow creating and editing of polls, as well as voting and viewing the results of available polls
-                            </p>
-                    </div>
-                </div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Franchise Owner</p>
-                        <p class="lead fw-normal fs-6">2021-2022</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">College Pro Window Cleaning</p>
-                        <p class="lead fw-normal fs-6">In my time running a franchise with college pro I learned every aspect of business ownership and the responsibilities involved. I further developed many of my abilities including sales, marketing, cold calling, leadership, mentorship, and coaching, as well as learning new skills such as recruiting, social selling using social media, business acumen, and complex real-world problem solving.
-                            <br>Key Contributions:
-                            <br>-Hired, trained, and lead a crew in the production season of window cleaning
-                            <br>-Ran a profitable business, which I expanded by over $15k in new customers to reach a total of $58k in sales 
-                            </p>
-                    </div>
-                </div>
-                <div class="row"><p></p></div>
-                <div class="row">
-                    <div class="col-4 text-end">
-                        <p class="lead fw-normal fs-4 fw-bold">Program Coordinator - Game Design</p>
-                        <p class="lead fw-normal fs-6">2017-2018</p>
-                    </div>
-                    <div class="col-8 text-start">
-                        <p class="lead fw-normal fs-5">Youth Fusion</p>
-                        <p class="lead fw-normal fs-6">Youth Fusion is a well-recognized non-profit organization that provides resources and programming to schools with at-risk youth. Their mandate is to work with the schools in order to increase graduation rates and postsecondary interest among the enrolled students. During my time as a program coordinator, I planned and taught lessons revolving around game design at a local high school. Throughout the year I continually guided the students through the process of creating a game, from initial idea formation and planning, to creating sprites, music, coding, and play testing.
-                            <br>Key Contributions:
-                            <br>-Trained 21 grade 10 students in Construct 3(a game design program)
-                            <br>-Formed 6 groups of students, each of which successfully completed the production of a game in 6 months
-                            </p>
-                    </div>
-                </div>    
-            </div>
-        </div>
-
-
-    </main>
-
-
-
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <span class="mb-3 mb-md-0 text-muted">&copy; 2026 Pierce Baker</span>
-            </div>
-        
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-muted" href="mailto: pierce369baker@gmail.com"><img src="img/email.png" width="35" height="35"></a></li>
-            <li class="ms-3"><a class="text-muted" href="tel:825-333-7020"><img src="img/phone.png" width="35" height="35"></a></li>
-            <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/in/pierce-baker/"><img src="img/linkedin.png" width="37" height="37"></a></li>
-            </ul>
-        </footer>
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
+<div class="w-1 px-4 h-24 bg-gradient-to-b from-primary-container to-transparent hidden md:block"></div>
+<p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant text-left border-l-2 border-primary-container/20 pl-6 md:border-0 md:pl-0">
+                        Pioneering the intersection of algorithmic precision and aesthetic fluidity. Architecting digital experiences for the next generation of the web.
+                    </p>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-xl max-w-7xl mx-auto px-6" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 aspect-square relative group">
+<div class="absolute inset-0 bg-primary-container/20 rounded-xl blur-2xl group-hover:bg-primary-container/30 transition-all"></div>
+<img alt="Pierce Baker Profile" class="relative z-10 w-full h-full object-cover rounded-xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" data-alt="A professional portrait of a creative technologist in a dark studio setting. He is wearing a minimalist black turtleneck, and the lighting is high-contrast with a subtle electric purple rim light defining his silhouette. The background is a deep navy with faint, out-of-focus digital UI elements. The mood is serious, technical, and forward-thinking, capturing a sense of mastery." src="img/face.jpg"/>
+</div>
+<div class="md:col-span-7 space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">About Me</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        I am a recent graduate who studied computer science. I have worked in web development, but also have a passion for software development. I am passionate about learning new things, and am always eager to try something new. I have proved my leadership skills through a leadership program in Taekwon do, the two day Amped leadership course through Lakehead University, as well as through my responsibilities as a manager during my time at College Pro. I grew up in Alberta, spent some time in Ontario where I went to school, and recently moved back to Alberta. I am a strong organized independent worker who also loves coordinating in a strong team envirnment.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+<div class="glass-panel p-6 rounded-xl glow-hover transition-all">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="location_on">location_on</span>
+<h3 class="font-headline-md text-body-lg font-bold text-white mb-2 uppercase">Location</h3>
+<p class="font-body-md text-on-surface-variant">Fort Saskatchewan, Alberta // Global Remote</p>
+</div>
+<div class="glass-panel p-6 rounded-xl glow-hover transition-all">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="hub">hub</span>
+<h3 class="font-headline-md text-body-lg font-bold text-white mb-2 uppercase">Focus</h3>
+<p class="font-body-md text-on-surface-variant">Software Development</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Career Section -->
+<section class="py-xl bg-surface-container-low/30" id="experience">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-center gap-4 mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-white uppercase">Career</h2>
+<div class="h-[1px] flex-grow bg-white/10"></div>
+</div>
+<div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary-container before:via-secondary-container/50 before:to-transparent">
+<!-- Entry 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary-container bg-background text-primary-container shadow-[0_0_15px_rgba(124,58,237,0.5)] z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <span class="material-symbols-outlined text-sm" data-icon="work">work</span>
     </div>
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
-  </body>
-</html>
+    <div class="w-[calc(100%-4rem)] md:w-[45%] glass-panel p-6 rounded-xl glow-hover transition-all">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="font-headline-md text-body-lg font-bold text-white">Sales Operations Coordinator</h3>
+            <time class="font-label-mono text-caption text-secondary">2024 — PRESENT</time>
+        </div>
+        <div class="text-primary-fixed-dim font-bold mb-4">Acosta Canada</div>
+            <p class="font-body-md text-on-surface-variant">
+                                            As a Sales Operations Coordinator, I managed the accuracy and flow of product and promotional data to support seamless retailer execution. I collaborated cross-functionally with teams across sales, marketing, product management, and IT to ensure timely delivery of content in multiple formats, resolved data discrepancies, and maintained operational integrity. I was passionate about process optimization, regularly identifying opportunities to streamline tasks through automation and improve reporting efficiency. With a detail-oriented mindset and strong communication skills, I supported both day-to-day operations and strategic projects that enhanced the overall sales process.
+                                                </p>
+        <div class="flex gap-2 mt-4">
+            <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Web Development</span>
+            <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Excel</span>
+        </div>
+    </div>
+</div>
+<!-- Entry 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary-container bg-background text-primary-container shadow-[0_0_15px_rgba(124,58,237,0.5)] z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <span class="material-symbols-outlined text-sm" data-icon="work">work</span>
+    </div>
+    <div class="w-[calc(100%-4rem)] md:w-[45%] glass-panel p-6 rounded-xl glow-hover transition-all">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="font-headline-md text-body-lg font-bold text-white">Client Services Coordinator</h3>
+            <time class="font-label-mono text-caption text-secondary">2023 — 2024</time>
+        </div>
+        <div class="text-primary-fixed-dim font-bold mb-4">Acosta Canada</div>
+            <p class="font-body-md text-on-surface-variant">
+                                            My main priority in this position was to support our country wide team of over 50 technicians with administrative tasks such as taking payments, ordering parts, and processing jobs. However, I was also responsible for answering phone lines, assisting customers with scheduling, and selling extended warranty. Due to my strong performance and high attention to detail, I was trained on several more advanced administration projects throughout my time here.
+                                                    </p>
+    </div>
+</div>
+<!-- Entry 2 -->
+<!-- <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-outline bg-background text-outline z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <span class="material-symbols-outlined text-sm" data-icon="palette">palette</span>
+    </div>
+        <div class="w-[calc(100%-4rem)] md:w-[45%] glass-panel p-6 rounded-xl glow-hover transition-all">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="font-headline-md text-body-lg font-bold text-white">Interactive Designer</h3>
+                <time class="font-label-mono text-caption text-outline">2019 — 2022</time>
+            </div>
+            <div class="text-primary-fixed-dim font-bold mb-4">SYNTHESIS STUDIO</div>
+                <p class="font-body-md text-on-surface-variant">
+                                                Developed brand-defining digital experiences for Fortune 500 clients. Focused on motion-heavy interfaces and innovative UX paradigms.
+                                            </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- Entry 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-outline bg-background text-outline z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <span class="material-symbols-outlined text-sm" data-icon="palette">work</span>
+    </div>
+        <div class="w-[calc(100%-4rem)] md:w-[45%] glass-panel p-6 rounded-xl glow-hover transition-all">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="font-headline-md text-body-lg font-bold text-white">Full Stack Web Developer</h3>
+                <time class="font-label-mono text-caption text-outline">2022 — 2022</time>
+            </div>
+            <div class="text-primary-fixed-dim font-bold mb-4">Modzee Software</div>
+                <p class="font-body-md text-on-surface-variant">
+                                                During my summer employment at Modzee I worked both individually and as part of a team to design, develop, and improve modules for the employee management platform. I also enjoyed being able to learn several new frameworks and libraries in this position including Vue.js and laravel.
+                                            </p>
+            <div class="flex gap-2 mt-4">
+                <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Web Development</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Vue.js</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Laravel</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Entry 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary-container bg-background text-primary-container shadow-[0_0_15px_rgba(124,58,237,0.5)] z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+        <span class="material-symbols-outlined text-sm" data-icon="work">work</span>
+    </div>
+    <div class="w-[calc(100%-4rem)] md:w-[45%] glass-panel p-6 rounded-xl glow-hover transition-all">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="font-headline-md text-body-lg font-bold text-white">Franchise Owner</h3>
+            <time class="font-label-mono text-caption text-secondary">2021 — 2022</time>
+        </div>
+        <div class="text-primary-fixed-dim font-bold mb-4">College Pro Window Cleaning</div>
+            <p class="font-body-md text-on-surface-variant">
+                                            In my time running a franchise with college pro I learned every aspect of business ownership and the responsibilities involved. I further developed many of my abilities including sales, marketing, cold calling, leadership, mentorship, and coaching, as well as learning new skills such as recruiting, social selling using social media, business acumen, and complex real-world problem solving.
+                                                    </p>
+        <div class="flex gap-2 mt-4">
+            <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Problem Solving Skills</span>
+            <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest rounded-full">Interpersonal Communication</span>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="py-xl" id="education">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-center gap-4 mb-xl justify-end">
+<div class="h-[1px] flex-grow bg-white/10"></div>
+<h2 class="font-headline-lg text-headline-lg text-white uppercase">Education</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+    <div class="glass-panel p-8 rounded-xl relative overflow-hidden group glow-hover transition-all">
+        <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span class="material-symbols-outlined text-9xl" data-icon="school">school</span>
+        </div>
+        <h3 class="font-headline-md text-body-lg font-bold text-white mb-1">Bachelor of Computing Honours, Computer Science</h3>
+        <div class="text-secondary font-bold mb-4">UNIVERSITY OF GUELPH</div>
+        <!-- <p class="font-body-md text-on-surface-variant mb-6">Focus on Human-Computer Interaction and Computer Graphics. Graduated with Honors.</p> -->
+    <div class="font-label-mono text-caption text-outline uppercase tracking-widest">Completed 2023</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+    <div class="glass-panel p-8 rounded-xl relative overflow-hidden group glow-hover transition-all">
+        <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span class="material-symbols-outlined text-9xl" data-icon="school">school</span>
+        </div>
+        <h3 class="font-headline-md text-body-lg font-bold text-white mb-1">Minor, Economics</h3>
+        <div class="text-secondary font-bold mb-4">UNIVERSITY OF GUELPH</div>
+        <!-- <p class="font-body-md text-on-surface-variant mb-6">Focus on Human-Computer Interaction and Computer Graphics. Graduated with Honors.</p> -->
+    <div class="font-label-mono text-caption text-outline uppercase tracking-widest">Completed 2023</div>
+</div>
+<div class="glass-panel p-8 rounded-xl relative overflow-hidden group glow-hover transition-all">
+    <div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+        <span class="material-symbols-outlined text-9xl" data-icon="verified">verified</span>
+    </div>
+    <h3 class="font-headline-md text-body-lg font-bold text-white mb-1">Git Essential Training</h3>
+        <div class="text-secondary font-bold mb-4">LinkedIn Learn</div>
+            <!-- <p class="font-body-md text-on-surface-variant mb-6">Advanced Typography, Visual Systems, and Dynamic Interface Motion Design.</p> -->
+            <div class="font-label-mono text-caption text-outline uppercase tracking-widest">Completed 2023</div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Technical Portfolio Section -->
+<!-- Contact Section -->
+<section class="py-xl" id="contact">
+<div class="max-w-7xl mx-auto px-6">
+<div class="glass-panel p-12 rounded-2xl overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary-container/5 blur-[100px] pointer-events-none"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl relative z-10">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Let's build something exceptional</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                                Whether you have a project in mind or just want to chat about the future of digital tech, my door is always open.
+                            </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<div class="text-caption text-outline font-label-mono uppercase tracking-widest">Email</div>
+<div class="text-white font-bold">pierce369baker@gmail.com</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</div>
+<div>
+<div class="text-caption text-outline font-label-mono uppercase tracking-widest">Network</div>
+<div class="text-white font-bold"><a href="https://www.linkedin.com/in/pierce-baker/">LinkedIn</a></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<form action="#" class="space-y-6">
+<div>
+<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Full Name</label>
+<input class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Subject</label>
+<input class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Project Inquiry" type="text"/>
+</div>
+<div>
+<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Message</label>
+<textarea class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tell me about your vision..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] active:scale-95 transition-all uppercase tracking-widest" type="submit">
+                                    Initialize Transmission
+                                </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</footer>
+</body></html>
