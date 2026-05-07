@@ -140,9 +140,9 @@
                 </p>
 <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-12">
 <div class="w-1 px-4 h-24 bg-gradient-to-b from-primary-container to-transparent hidden md:block"></div>
-<p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant text-left border-l-2 border-primary-container/20 pl-6 md:border-0 md:pl-0">
+<!-- <p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant text-left border-l-2 border-primary-container/20 pl-6 md:border-0 md:pl-0">
                         Pioneering the intersection of algorithmic precision and aesthetic fluidity. Architecting digital experiences for the next generation of the web.
-                    </p>
+                    </p> -->
 </div>
 </div>
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
@@ -159,13 +159,13 @@
 <div class="md:col-span-7 space-y-md">
 <h2 class="font-headline-lg text-headline-lg text-white mb-4">About Me</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant">
-                        I am a recent graduate who studied computer science. I have worked in web development, but also have a passion for software development. I am passionate about learning new things, and am always eager to try something new. I have proved my leadership skills through a leadership program in Taekwon do, the two day Amped leadership course through Lakehead University, as well as through my responsibilities as a manager during my time at College Pro. I grew up in Alberta, spent some time in Ontario where I went to school, and recently moved back to Alberta. I am a strong organized independent worker who also loves coordinating in a strong team envirnment.
+                        I am a recent graduate who studied computer science. I have worked in web development, but also have a passion for software development. I am passionate about learning new things, and am always eager to try something new. I have proved my leadership skills through a leadership program in Taekwon do, the two day Amped leadership course through Lakehead University, as well as through my responsibilities as a manager during my time at College Pro. I am a strong organized independent worker who also loves coordinating in a strong team envirnment.
                     </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
 <div class="glass-panel p-6 rounded-xl glow-hover transition-all">
 <span class="material-symbols-outlined text-secondary mb-4" data-icon="location_on">location_on</span>
 <h3 class="font-headline-md text-body-lg font-bold text-white mb-2 uppercase">Location</h3>
-<p class="font-body-md text-on-surface-variant">Fort Saskatchewan, Alberta // Global Remote</p>
+<p class="font-body-md text-on-surface-variant">Fort Saskatchewan, Alberta //\nGlobal Remote</p>
 </div>
 <div class="glass-panel p-6 rounded-xl glow-hover transition-all">
 <span class="material-symbols-outlined text-primary mb-4" data-icon="hub">hub</span>
@@ -355,22 +355,28 @@
 </div>
 </div>
 <div>
-<form action="#" class="space-y-6">
-<div>
-<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Full Name</label>
-<input class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="John Doe" type="text"/>
-</div>
-<div>
-<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Subject</label>
-<input class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Project Inquiry" type="text"/>
-</div>
-<div>
-<label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Message</label>
-<textarea class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tell me about your vision..." rows="4"></textarea>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] active:scale-95 transition-all uppercase tracking-widest" type="submit">
-                                    Initialize Transmission
-                                </button>
+<form id="contact-form" class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Full Name</label>
+            <input name="user_name" required class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="John Doe" type="text"/>
+        </div>
+        <div>
+            <label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Email Address</label>
+            <input name="user_email" required class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="john@example.com" type="email"/>
+        </div>
+    </div>
+    <div>
+        <label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Subject</label>
+        <input name="subject" required class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Project Inquiry" type="text"/>
+    </div>
+    <div>
+        <label class="block text-caption text-outline font-label-mono uppercase tracking-widest mb-2">Message</label>
+        <textarea name="message" required class="w-full bg-background border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Tell me about your vision..." rows="4"></textarea>
+    </div>
+    <button id="submit-btn" class="w-full bg-primary-container text-on-primary-container py-4 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.4)] active:scale-95 transition-all uppercase tracking-widest" type="submit">
+        Initialize Transmission
+    </button>
 </form>
 </div>
 </div>
@@ -381,4 +387,41 @@
 </div>
 </div>
 </footer>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        // Sign up at emailjs.com to get your Public Key
+        emailjs.init("UbSLaDrLngS6kimsx"); 
+    })();
+
+    window.onload = function() {
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // UI Feedback
+            submitBtn.innerText = "TRANSMITTING...";
+            submitBtn.disabled = true;
+
+            // Send form data
+            emailjs.sendForm('service_tmy3jv9', 'template_dtulqik', this)
+                .then(() => {
+                    alert('Transmission Successful! I will reach out shortly.');
+                    contactForm.reset();
+                    submitBtn.innerText = "INITIALIZE TRANSMISSION";
+                    submitBtn.disabled = false;
+                }, (error) => {
+                    alert('Transmission Interrupted. Please check your connection.');
+                    console.error('FAILED...', error);
+                    submitBtn.innerText = "INITIALIZE TRANSMISSION";
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+</script>
 </body></html>
